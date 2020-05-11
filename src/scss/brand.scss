@@ -1,0 +1,57 @@
+.brand {
+  background-color: #9a9a9a;
+  &__body {
+    display: flex;
+  }
+}
+
+.intro {
+  padding-bottom: 138px;
+  &__img {
+    margin: 110px 0 33px 0;
+  }
+
+  &__title {
+    position: relative;
+    font-family: "Raleway", sans-serif;
+    font-size: 36px;
+    line-height: 1.2;
+    color: #ffffff;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 64px;
+      background-color: #fff;
+    }
+  }
+
+  &__text {
+    margin-bottom: 44px;
+    p {
+      opacity: 0.8;
+      font-family: "Raleway", sans-serif;
+      font-size: 16px;
+      line-height: 23px;
+      font-weight: 300;
+      color: #ffffff;
+    }
+  }
+}
+
+.btn {
+  border: solid 2px #fff;
+  padding: 15px 32px;
+  max-width: 135px;
+  &__link {
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    
+  }
+}
