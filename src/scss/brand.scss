@@ -2,56 +2,144 @@
   background-color: #9a9a9a;
   &__body {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
 .intro {
   padding-bottom: 138px;
+
+  &__body {
+    max-width: 560px;
+    @media (max-width: $md2+px) {
+      padding: 0px 15px 0px 0px;
+    }
+  }
+
   &__img {
-    margin: 110px 0 33px 0;
+    margin: 110px 0 25px 0;
+    @media (max-width: $md2+px) {
+      margin: 40px 0 25px 0;
+    }
   }
 
   &__title {
     position: relative;
-    font-family: "Raleway", sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 36px;
     line-height: 1.2;
     color: #ffffff;
-    padding-bottom: 40px;
-    margin-bottom: 40px;
+    padding-bottom: 36px;
+    margin-bottom: 33px;
 
     &:after {
-      content: "";
+      content: '';
       position: absolute;
-      left: 0;
+      left: 4px;
       bottom: 0;
-      height: 3px;
+      height: 2px;
       width: 64px;
       background-color: #fff;
+    }
+
+    @media (max-width: $md2+px) {
+      font-size: 24px;
+      padding-bottom: 24px;
     }
   }
 
   &__text {
-    margin-bottom: 44px;
+    margin-bottom: 41px;
     p {
       opacity: 0.8;
-      font-family: "Raleway", sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: 16px;
       line-height: 23px;
       font-weight: 300;
       color: #ffffff;
     }
   }
+
+  @media (max-width: $md2+px) {
+    padding: 0px 0px 50px 0px;
+  }
 }
 
 .btn {
   border: solid 2px #fff;
-  padding: 15px 32px;
-  max-width: 135px;
+  padding: 11px 32px;
+  max-width: 139px;
   &__link {
     font-size: 15px;
     font-weight: 600;
     color: #ffffff;
-    
+  }
+  @media (max-width: $md2+px) {
+    text-align: center;
+    font-size: 12px;
+    padding: 5px 0;
+  }
+}
+
+.user-form {
+  border-radius: 5px;
+  background-color: #fff;
+
+  &__title {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    text-align: center;
+    background-color: #f5f5f5;
+    font-size: 20px;
+    font-weight: 700;
+    color: #333333;
+    padding: 15px 0;
+    margin: 0px 0px 29px 0px;
+    span {
+      color: #ff8b38;
+    }
+    @media (max-width: $md2+px) {
+      margin: 0px 0px 15px 0px;
+    }
+  }
+}
+
+.form {
+  max-width: 360px;
+  border-radius: 5px;
+  background-color: #fff;
+  &__body {
+    padding: 0 40px;
+    @media (max-width: 960px) {
+      padding: 0 25px;
+    }
+  }
+  &__input {
+    padding: 11px 0px 11px 14px;
+    margin: 0px 0px 38px 0px;
+    width: 100%;
+
+    line-height: 1.2;
+    color: #bdbdbd;
+    border-bottom: 1px solid #bdbdbd;
+    @media (max-width: $md2+px) {
+      margin: 0px 0px 18px 0px;
+    }
+  }
+
+  &__submit {
+    padding: 22px 0px;
+    background-color: #ff9b51;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    @media (max-width: $md2+px) {
+      font-size: 12px;
+      padding: 15px 0px;
+    }
   }
 }

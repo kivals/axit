@@ -1,12 +1,18 @@
 section.brand
 	.container.brand__body
 		.brand__intro.intro
-			img.intro__img(src="img/logo_big.png", alt="", srcset="")
-			h1.intro__title MODERN AXURE TEMPLATE FOR BEAUTIFUL PROTOTYPES
-			.intro__text 
-				p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-					euismod bibendum laoreet. Proin gravida dolor sit amet lacus
-					accumsan et viverra justo commodo.
-			.intro__btn.btn
-				a.btn__link(href="#", target="_blank", rel="noopener noreferrer") Download
+			.intro__body
+				img.intro__img(src="img/logo_big.png", alt="", srcset="")
+				h1.intro__title MODERN AXURE TEMPLATE FOR BEAUTIFUL PROTOTYPES
+				.intro__text 
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.
+				.intro__btn.btn
+					a.btn__link(href="#", target="_blank", rel="noopener noreferrer") Download
 		.brand__form.user-form
+			.user-form__title Try Your <span>FREE</span> Trial Today
+			form.user-form__form.form(action="")
+				.form__body
+					input.form__input(type="text", name="username", placeholder="Name")
+					input.form__input(type="email", name="email", placeholder="Email")
+					input.form__input(type="password", name="password", placeholder="Password")
+				input.form__submit(type="submit", value="Get Started")

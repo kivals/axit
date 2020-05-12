@@ -9,12 +9,13 @@ $fontfamily: 'Open Sans',sans-serif;
 $minwidth:320px;
 $mw:1140;
 $md1:$mw+12;
-$md2:910;
+$md2:960;
 $md3:767.98;
 $md4:479.98;
 //</ПЕРЕМЕННЫЕ>
 
 //<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>
+@import 'mixins.scss';
 @import 'nullstyle.scss';
 //</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>
 
