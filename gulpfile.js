@@ -7,7 +7,7 @@ const scss = require('./gulp/tasks/scss');
 const script = require('./gulp/tasks/script');
 const fonts = require('./gulp/tasks/fonts.js');
 const images = require('./gulp/tasks/image.js');
+const icons = require('./gulp/tasks/icons.js');
 
-
-const build = gulp.parallel(pug2html, scss, script, fonts, images);
+const build = gulp.parallel(pug2html, scss, script, fonts, images, icons);
 exports.default = gulp.series(clean, build, serve);

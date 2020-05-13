@@ -9,7 +9,7 @@
     @media (max-width: $md2+px) {
       height: 54px;
     }
-    @media (max-width:$md3+px) {
+    @media (max-width: $md3+px) {
       justify-content: flex-end;
     }
   }
@@ -24,6 +24,14 @@
   &__list {
     display: flex;
     justify-content: flex-end;
+    @media (max-width: $md3+px) {
+      display: block;
+      li {
+        margin: 0px 0px 20px 0px;
+        padding: 0px 0px 0px 20px;
+        font-size: 18px;
+      }
+    }
   }
 
   &__link {

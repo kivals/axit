@@ -1,0 +1,18 @@
+.social {
+  &__body {
+    display: flex;
+  }
+}
+
+.social-info {
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333333;
+  }
+
+  &__text {
+    line-height: 20px;
+    color: #86878b;
+  }
+}

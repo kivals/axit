@@ -21,11 +21,14 @@ function adaptive_header(width) {
       burgerMenu.append(headerMenu);
     }
   } else if (headerMenu.classList.contains('adaptive')) {
+    const headerLogo = document.querySelector('.header__logo');
     headerMenu.classList.remove('adaptive');
-    // TODO вернуть обратно меню!
+    headerLogo.after(headerMenu);
   }
 }
 
 window.addEventListener('resize', () => {
   adaptive_header(window.outerWidth);
 });
+
+adaptive_header(window.outerWidth);
