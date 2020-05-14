@@ -1,5 +1,5 @@
 //</ШРИФТЫ>
-@import 'fonts.scss';
+@import 'common/fonts.scss';
 //<Шрифт по умолчанию>
 $fontfamily: 'Open Sans',sans-serif;
 //</Шрифт по умолчанию>
@@ -15,8 +15,8 @@ $md4:479.98;
 //</ПЕРЕМЕННЫЕ>
 
 //<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>
-@import 'mixins.scss';
-@import 'nullstyle.scss';
+@import 'common/mixins.scss';
+@import 'common/nullstyle.scss';
 //</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>
 
 //<ОБОЛОЧКА>
@@ -36,4 +36,6 @@ $md4:479.98;
 @import "header.scss";
 @import "brand.scss";
 @import "social.scss";
+@import "tab.scss";
+
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>
