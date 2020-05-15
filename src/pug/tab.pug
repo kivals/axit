@@ -1,14 +1,32 @@
 section.tab
 	.tab-body.container
 		.tab__selector.selector
-			.selector__item.selector-1 tab1
-			.selector__item.selector-2 tab2
-			.selector__item.selector-3 tab3
-		.tab__item.item
-			.item__info.info-item
-				.info-item__title Tabs with soft transitioning effect.
-				.info-item__text 
+			.selector__item.selector-1.active(data-slider=".slider-item_1")
+				span tab1
+			.selector__item.selector-2(data-slider=".slider-item_2")
+				span tab2
+			.selector__item.selector-3(data-slider=".slider-item_3")
+				span tab3
+		.tab__item.slider-item.slider-item_1.visible
+			.slider-item__info.slider-info
+				.slider-info__title Tabs with soft transitioning effect.
+				.slider-info__text 
 					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes.
 					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
-			.item__img
+				.slider-info__btn.btn
+					a.btn__link(href="#", target="_blank", rel="noopener noreferrer") Download
+			.slider-item__img
+				img(src="img/tab/tab.png", alt="", srcset="")
+		
+		.tab__item.slider-item.slider-item_2
+			.slider-item__info.slider-info
+				.slider-info__title Tabs with soft transitioning effect.
+				.slider-info__text 
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes.
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes.
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
+				.slider-info__btn.btn
+					a.btn__link(href="#", target="_blank", rel="noopener noreferrer") Download
+			.slider-item__img
 				img(src="img/tab/tab.png", alt="", srcset="")
