@@ -30,8 +30,8 @@ function adaptive_header(width) {
 
 function highlightSelector(newSelector) {
   const activeSelector = tabSelector.getElementsByClassName('active');
-  if (activeSelector) {
-    activeSelector.classList.remove('active');
+  if (activeSelector[0] && activeSelector.length === 1) {
+    activeSelector[0].classList.remove('active');
     newSelector.classList.add('active');
   }
 }
@@ -46,9 +46,21 @@ tabSelector.addEventListener('click', (e) => {
     return;
   }
   highlightSelector(selector);
-  selector.classList.toggle('active');
-  const sliderName = selector.dataset.slider;
-  console.log(sliderName);
+
+  const sliderItem = document.querySelector(`.slider-item.${selector.dataset.slider}`);
+  if (!sliderItem) {
+    return;
+  }
+  //ищем visible-слайд
+  const currentSlider = document.querySelector('.slider-item.visible');
+  if (currentSlider) {
+    currentSlider.classList.remove('visible');
+  }
+  console.log(currentSlider);
+
+  //устанавливаем класс visible для нового слайда
+  sliderItem.classList.add('visible');
+  
 });
 
 adaptive_header(window.outerWidth);
