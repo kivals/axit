@@ -15,7 +15,6 @@
   max-width: 112px;
 
   &__item {
-    
     cursor: pointer;
     border-radius: 3px;
     padding: 50px 35px;
@@ -34,10 +33,20 @@
   }
 }
 
+.slider-body {
+  position: relative;
+  width: 100%;
+}
 .slider-item {
-  display: none;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s linear;
+  
   &.visible {
-    display: flex;
+    visibility: visible;
+    opacity: 1;
+   // transition: visibility 0.5s, opacity 0.5s linear;
   }
 }
 
@@ -62,8 +71,8 @@
   }
 
   &__btn {
-      background-color: #ff8b38;
-      border: 0;
-      border-radius: 3px;
+    background-color: #ff8b38;
+    border: 0;
+    border-radius: 3px;
   }
 }
