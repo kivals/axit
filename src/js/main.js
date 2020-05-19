@@ -2,6 +2,23 @@ const burgerIcon = document.querySelector('.burger-icon');
 const burgerMenu = document.querySelector('.burger-menu');
 const tabSelector = document.querySelector('.tab__selector');
 
+/*
+  Управляем высотой tab блока, т.к. в нем есть
+  дочерние блоки с position:absolute
+  var biggestHeight = 0;
+// Loop through elements children to find & set the biggest height
+$(".container *").each(function(){
+ // If this elements height is bigger than the biggestHeight
+ if ($(this).height() > biggestHeight ) {
+   // Set the biggestHeight to this Height
+   biggestHeight = $(this).height();
+ }
+});
+
+// Set the container height
+$(".container").height(biggestHeight);
+*/
+
 if (burgerIcon) {
   burgerIcon.addEventListener('click', () => {
     burgerIcon.classList.toggle('active');
@@ -51,16 +68,22 @@ tabSelector.addEventListener('click', (e) => {
   if (!sliderItem) {
     return;
   }
-  //ищем visible-слайд
+  // ищем visible-слайд
   const currentSlider = document.querySelector('.slider-item.visible');
   if (currentSlider) {
     currentSlider.classList.remove('visible');
   }
-  console.log(currentSlider);
 
-  //устанавливаем класс visible для нового слайда
+  // устанавливаем класс visible для нового слайда
   sliderItem.classList.add('visible');
-  
+
+  // устанавливаем размер таб панели из position absolut слайдов
+  const sliderBody = document.querySelector('.slider-body');
+  const sliderItemHeight = getComputedStyle(sliderItem).height;
+  const sliderBodyHeight = getComputedStyle(sliderBody).height;
+  if (parseInt(sliderBodyHeight) - parseInt(sliderItemHeight)) {
+    sliderBody.style.height = sliderItemHeight;
+  }
 });
 
 adaptive_header(window.outerWidth);
