@@ -2,6 +2,9 @@
   background-color: #f5f5f5;
   &__selector {
     margin: 0px 100px 0px 0px;
+    @media (max-width: $md2+px) {
+      margin: 0px 50px 0px 0px;
+    }
   }
 }
 
@@ -9,6 +12,9 @@
   display: flex;
   justify-content: space-between;
   padding: 147px 0 114px 0;
+  @media (max-width: $md2+px) {
+    padding: 70px 0 55px 0;
+  }
 }
 
 .selector {
@@ -42,11 +48,22 @@
   visibility: hidden;
   opacity: 0;
   transition: visibility 0.5s, opacity 0.5s linear;
-  
+
+  &__inner {
+    display: flex;
+  }
+
+  &__info {
+    margin: 0px 103px 0px 0px;
+    @media (max-width: $md2+px) {
+      margin: 0px 50px 0px 0px;
+    }
+  }
+
   &.visible {
     visibility: visible;
     opacity: 1;
-   // transition: visibility 0.5s, opacity 0.5s linear;
+    // transition: visibility 0.5s, opacity 0.5s linear;
   }
 }
 
@@ -56,6 +73,9 @@
     font-size: 20px;
     font-weight: 700;
     color: #000000;
+    @media (max-width: $md2+px) {
+      margin: 0px 0px 20px 0px;
+    }
   }
 
   &__text {
@@ -67,6 +87,13 @@
       &:last-child {
         margin: 0;
       }
+      @media (max-width: $md2+px) {
+        margin: 0px 0px 15px 0px;
+      }
+    }
+
+    @media (max-width: $md2+px) {
+      margin: 0px 0px 25px 0px;
     }
   }
 
