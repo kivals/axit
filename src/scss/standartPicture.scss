@@ -1,0 +1,12 @@
+.standart-picture {
+	padding: 100px 0;
+	background-color: #f5f5f5;
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__info {
+		margin: 0px 197px 0px 0px;
+	}
+}
