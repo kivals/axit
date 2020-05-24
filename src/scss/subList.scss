@@ -2,16 +2,23 @@
   padding: 115px 0;
   &__inner {
     display: flex;
+    justify-content: space-between;
   }
   &__image {
+    flex: 0 1 50%;
     margin: 0px 194px 0px 0px;
+    @media (max-width: $md2+px) {
+      margin: 0px 100px 0px 0px;
+    }
   }
 
   &__photo {
+    max-width: 100%;
     box-shadow: 0px 6px 22px 0px rgba(50, 50, 50, 0.61);
   }
 
   &__info {
+    flex: 0 1 50%;
   }
 }
 

@@ -1,23 +1,7 @@
 const burgerIcon = document.querySelector('.burger-icon');
 const burgerMenu = document.querySelector('.burger-menu');
 const tabSelector = document.querySelector('.tab__selector');
-
-/*
-  Управляем высотой tab блока, т.к. в нем есть
-  дочерние блоки с position:absolute
-  var biggestHeight = 0;
-// Loop through elements children to find & set the biggest height
-$(".container *").each(function(){
- // If this elements height is bigger than the biggestHeight
- if ($(this).height() > biggestHeight ) {
-   // Set the biggestHeight to this Height
-   biggestHeight = $(this).height();
- }
-});
-
-// Set the container height
-$(".container").height(biggestHeight);
-*/
+const activeSelector = document.querySelector('.selector__item.active');
 
 if (burgerIcon) {
   burgerIcon.addEventListener('click', () => {
@@ -25,6 +9,8 @@ if (burgerIcon) {
     burgerMenu.classList.toggle('active');
   });
 }
+
+sliderHandler(activeSelector);
 
 function isAdaptive(node) {
   return node.classList.contains('adaptive');
@@ -55,10 +41,15 @@ function highlightSelector(newSelector) {
 
 window.addEventListener('resize', () => {
   adaptive_header(window.outerWidth);
+  sliderHandler(document.querySelector('.selector__item.active'));
 });
 
 tabSelector.addEventListener('click', (e) => {
   const selector = e.target.closest('.selector__item');
+  sliderHandler(selector);
+});
+
+function sliderHandler(selector) {
   if (!selector) {
     return;
   }
@@ -84,6 +75,6 @@ tabSelector.addEventListener('click', (e) => {
   if (parseInt(sliderBodyHeight) - parseInt(sliderItemHeight)) {
     sliderBody.style.height = sliderItemHeight;
   }
-});
+}
 
 adaptive_header(window.outerWidth);
