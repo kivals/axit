@@ -1,12 +1,36 @@
 .standart-picture {
-	padding: 100px 0;
-	background-color: #f5f5f5;
-	&__inner {
-		display: flex;
-		justify-content: space-between;
-	}
+  padding: 100px 0;
+  background-color: #f5f5f5;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: $md3+px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 
-	&__info {
-		margin: 0px 197px 0px 0px;
-	}
+  &__info {
+    flex: 1 1 50%;
+    margin: 0px 197px 0px 0px;
+    @media (max-width: $md2+px) {
+      margin: 0px 100px 0px 0px;
+    }
+    @media (max-width: $md3+px) {
+      margin: 0 0 25px 0;
+    }
+  }
+
+  &__image {
+    flex: 1 1 50%;
+    img {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: $md3+px) {
+    padding: 50px 0;
+  }
+  @media (max-width: $md3+px) {
+    padding: 30px 0;
+  }
 }
