@@ -10,8 +10,6 @@ if (burgerIcon) {
   });
 }
 
-sliderHandler(activeSelector);
-
 function isAdaptive(node) {
   return node.classList.contains('adaptive');
 }
@@ -39,42 +37,63 @@ function highlightSelector(newSelector) {
   }
 }
 
-window.addEventListener('resize', () => {
-  adaptive_header(window.outerWidth);
-  sliderHandler(document.querySelector('.selector__item.active'));
-});
+/*
+  Найти активный tab-selector
+*/
+function getActiveSlide() {
+  const activeTab = document.querySelector('.selector__item.active');
+  return document.querySelector(`.slider-item.${activeTab.dataset.slider}`);
+}
 
-tabSelector.addEventListener('click', (e) => {
-  const selector = e.target.closest('.selector__item');
-  sliderHandler(selector);
-});
+/*
+  Установить размер контейнера для слайдов
+*/
+function setSlideSize() {
+  const activeSlide = getActiveSlide();
+  const sliderBody = document.querySelector('.slider-body');
+  const activeSlideHeight = getComputedStyle(activeSlide).height;
+  const sliderBodyHeight = getComputedStyle(sliderBody).height;
+  if (parseInt(sliderBodyHeight) - parseInt(activeSlideHeight)) {
+    sliderBody.style.height = activeSlideHeight;
+  }
+}
 
-function sliderHandler(selector) {
-  if (!selector) {
+/*
+  Произвести переключение слайда на активный
+*/
+function switchSlide(activetab) {
+  const nextSlide = document.querySelector(`.slider-item.${activetab.dataset.slider}`);
+  if (!nextSlide) {
     return;
   }
-  highlightSelector(selector);
 
-  const sliderItem = document.querySelector(`.slider-item.${selector.dataset.slider}`);
-  if (!sliderItem) {
-    return;
-  }
-  // ищем visible-слайд
-  const currentSlider = document.querySelector('.slider-item.visible');
-  if (currentSlider) {
-    currentSlider.classList.remove('visible');
+  const currentSlide = document.querySelector('.slider-item.visible');
+  if (currentSlide) {
+    currentSlide.classList.remove('visible');
   }
 
   // устанавливаем класс visible для нового слайда
-  sliderItem.classList.add('visible');
-
-  // устанавливаем размер таб панели из position absolut слайдов
-  const sliderBody = document.querySelector('.slider-body');
-  const sliderItemHeight = getComputedStyle(sliderItem).height;
-  const sliderBodyHeight = getComputedStyle(sliderBody).height;
-  if (parseInt(sliderBodyHeight) - parseInt(sliderItemHeight)) {
-    sliderBody.style.height = sliderItemHeight;
-  }
+  nextSlide.classList.add('visible');
 }
+
+function onClickTab(event) {
+  const clickedTab = event.target.closest('.selector__item');
+  highlightSelector(clickedTab);
+  switchSlide(clickedTab);
+  setSlideSize();
+}
+/*
+  handler блок
+*/
+window.addEventListener('resize', () => {
+  adaptive_header(window.outerWidth);
+  setSlideSize();
+});
+
+window.addEventListener('load', () => {
+  setSlideSize();
+});
+
+tabSelector.addEventListener('click', onClickTab);
 
 adaptive_header(window.outerWidth);
