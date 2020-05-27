@@ -1,0 +1,119 @@
+.process {
+  padding: 105px 0;
+
+  &__header {
+    text-align: center;
+    margin: 0px 0px 80px 0px;
+    @media (max-width: $md2+px) {
+      margin: 0px 0px 40px 0px;
+		}
+		@media (max-width: $md2+px) {
+			margin: 0px 0px 20px 0px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    display: inline-block;
+    padding: 0px 0px 30px 0px;
+    margin: 0px 0px 30px 0px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 36px;
+    color: #212121;
+    &:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      width: 64px;
+      height: 2px;
+      background-color: #ff8b38;
+    }
+    @media (max-width: $md3+px) {
+      font-size: 24px;
+      padding: 0px 0px 15px 0px;
+      margin: 0px 0px 15px 0px;
+    }
+  }
+
+  &__body {
+		display: flex;
+		@media (max-width: $md3+px) {
+			flex-direction: column;
+		}
+  }
+
+  &__text {
+		color: #86878b;
+		
+		@media (max-width: $md3+px) {
+			font-size: 12px;
+		}
+  }
+
+  &__item {
+    flex: 0 1 33.333%;
+    margin: 0px 32px 0px 0px;
+    &:last-child {
+      margin: 0;
+		}
+		@media (max-width: $md3+px) {
+			margin: 0px 0px 20px 0px;
+		}
+  }
+
+  @media (max-width: $md2+px) {
+    padding: 50px 0;
+  }
+}
+
+.process-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    border: 2px solid #ff8b38;
+    border-radius: 50%;
+		margin: 0px 0px 29px 0px;
+		@media (max-width: $md3+px) {
+			margin: 0px 0px 15px 0px;
+			height: 50px;
+    	width: 50px;
+		}
+
+    .fa {
+      font-size: 32px;
+			color: #ff8b38;
+			@media (max-width: $md3+px) {
+				font-size: 24px;
+			}
+    }
+  }
+
+  &__title {
+    margin: 0px 0px 29px 0px;
+    font-size: 20px;
+    font-weight: 700;
+		color: #333333;
+		@media (max-width: $md3+px) {
+			font-size: 14px;
+			margin: 0px 0px 18px 0px;
+		}
+  }
+
+  &__text {
+    text-align: center;
+    line-height: 1.5em;
+		color: #86878b;
+		@media (max-width: $md3+px) {
+			font-size: 12px;
+		}
+  }
+}

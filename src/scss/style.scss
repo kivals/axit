@@ -33,12 +33,13 @@ $md4:479.98;
 //</ОСНОВНАЯ СЕТКА>
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>
-@import "header.scss";
-@import "brand.scss";
-@import "social.scss";
-@import "tab.scss";
-@import "subList.scss";
-@import "standartPicture.scss"
+@import "blocks/header.scss";
+@import "blocks/brand.scss";
+@import "blocks/social.scss";
+@import "blocks/tab.scss";
+@import "blocks/subList.scss";
+@import "blocks/standartPicture.scss";
+@import "blocks/process.scss"
 
 
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>
